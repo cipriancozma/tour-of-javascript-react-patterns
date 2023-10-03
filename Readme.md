@@ -31,3 +31,23 @@ Memory: Restricting the instantiation to just one instance could potentially sav
 3. **Proxy Pattern**
 
 ---
+
+With Proxy Pattern we can intercept and control interactions to target objects.
+
+The Proxy Pattern uses a Proxy intercept and control interactions to target objects.
+
+Regularly we can access properties within an object with dot or bracket notation and modify them in a similar way.
+
+With Proxy Pattern we don't interact with the objects directly. Instead, a Proxy object intercepts the request and forwards this to the target object.
+
+**Reflect**
+
+The built-in Reflect object make easier the manipulation of the target object.
+
+Instead of accessing objects through obj[prop] we can access or modify through Reflect.get() and Reflect.set()
+
+**Tradeoffs**
+
+Control: Proxies make it easy to add functionality when interacting with a certain object, such as validation, logging, formatting, debugging.
+
+Long handler executions: Executing handlers on every object interaction could lead to performance issues.
