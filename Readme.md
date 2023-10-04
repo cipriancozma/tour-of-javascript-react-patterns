@@ -51,3 +51,25 @@ Instead of accessing objects through obj[prop] we can access or modify through R
 Control: Proxies make it easy to add functionality when interacting with a certain object, such as validation, logging, formatting, debugging.
 
 Long handler executions: Executing handlers on every object interaction could lead to performance issues.
+
+4. **Observer Pattern**
+
+---
+
+Use observables to notify subscribers when an event occurs.
+
+With the observer pattern we have:
+
+1. An observable object which can be observed by subscribers in order to notify them.
+
+2. Subscribers which can subscribe to and get notified by the observable object.
+
+**Tradeoffs**
+
+Separation of concerns: The observer objects aren't tightly coupled to the observable object and can be decoupled at any time. The observable object is responsible for monitoring the events while the observers simply handle the received data.
+
+Decreased performance: Notifying all subscribers might take a significant amount of time if the observer handling becomes too complex or if there are too many subscribers to notify.
+
+5. **Factory Pattern**
+
+---
