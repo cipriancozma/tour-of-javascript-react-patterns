@@ -73,3 +73,15 @@ Decreased performance: Notifying all subscribers might take a significant amount
 5. **Factory Pattern**
 
 ---
+
+The Factory Pattern is a function which is used to create many of the same objects.
+
+A Factory function can be any function that returns an object.
+
+**Tradeoffs**
+
+DRY: The Factory pattern is useful when we have to create objects that share the same properties without having to repeat the same code over and over.
+
+6. **Prototype Pattern**
+
+---
