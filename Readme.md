@@ -85,3 +85,9 @@ DRY: The Factory pattern is useful when we have to create objects that share the
 6. **Prototype Pattern**
 
 ---
+
+Prototype Pattern share properties among many objects of the same type.
+
+**Tradeoffs**
+
+Memory efficient: The prototype chain allows us to access properties directly defined on the object itself, we can avoid duplication of methods and properties and reducing the amount of memory used.
