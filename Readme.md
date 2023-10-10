@@ -91,3 +91,7 @@ Prototype Pattern share properties among many objects of the same type.
 **Tradeoffs**
 
 Memory efficient: The prototype chain allows us to access properties directly defined on the object itself, we can avoid duplication of methods and properties and reducing the amount of memory used.
+
+7. **React -> Container/Presentation Pattern**
+
+---

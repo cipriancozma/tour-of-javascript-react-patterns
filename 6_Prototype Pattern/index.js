@@ -1,3 +1,5 @@
+// This approach is using factory functions
+
 const createDog = (name, age) => ({
   name,
   age,
