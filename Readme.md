@@ -95,3 +95,19 @@ Memory efficient: The prototype chain allows us to access properties directly de
 7. **React -> Container/Presentation Pattern**
 
 ---
+
+We can use the Container/Presentational pattern to separate the logic of a component from the view. To achieve this, we need to have:
+
+- Presentational Component -> that takes care about how data is shown to the user
+
+- Container Component -> that takes care about what data is shown to the user
+
+**Tradeoffs**
+
+Separation of concerns: Presentational components can be pure functions which are responsible for the UI, whereas the container components are responsible for the state and data of the app.
+
+Reusability: We can easily reuse the presentational components throughout our application.
+
+Flexibility: Since presentational components don't alter the app logic, the appearance of presentational components can easily be altered by someone without knowledge of the codebase.
+
+Testing: Testing presentational components is easy, as they are usually pure functions. We know that the components will render based on which data we pass, without having to mock a data store.
