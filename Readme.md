@@ -165,3 +165,15 @@ Good alternative to older React design patterns: The hooks pattern is a good alt
 11. **React -> Provider Pattern**
 
 ---
+
+The Provider Pattern uses React's Context API which is a way to easily share data between components.
+
+**Tradeoffs**
+
+Scalability: There is less risk involved when sharing state across multiple components with the Provider Pattern.
+
+Performance: Components that consume the Provider context re-render whenever a value changes. This can cause performance issues if you aren't careful which components are consuming the context.
+
+12. **React -> Compound Pattern**
+
+---
