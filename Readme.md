@@ -149,3 +149,19 @@ Unnecessary with Hooks: Hooks changed the way we can add reusability and data sh
 10. **React -> Hooks Pattern**
 
 ---
+
+Use functions to reuse stateful logic among multiple components.
+
+**Tradeoffs**
+
+Simplifies components: Hooks make it easy to add state to functional components, rather than class components.
+
+Reusing stateful logic: Hooks allow you to reuse stateful logic among multiple components accross the app.
+
+Sharing non-visual logic: Hooks make it easy to share non visual logic, without having to use patterns like HOC or Render Props
+
+Good alternative to older React design patterns: The hooks pattern is a good alternative to use to an older one, namely Presentational / Container pattern.
+
+11. **React -> Provider Pattern**
+
+---
