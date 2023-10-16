@@ -129,3 +129,23 @@ Naming collisions: It can easily happen that the HOC overrides a prop of a compo
 9. **React -> Render Props Pattern**
 
 ---
+
+Render Props pattern is about passing JSX elements to components through props
+
+With the Render Props patern, we pass components as props to other components. The components that are passed as props can in turn receive props from that component.
+
+Render props make it easy to reuse logic across multiple components.
+
+**Tradeoffs**
+
+Reusability: Since render props can be different each time, we can make components that receive render props highly reusable for multiple usecases.
+
+Separation of concerns: We can separate our app's logic from rendering components through render props. The stateful component that receives a render prop can pass the data onto stateless components which merely render the data.
+
+Solution to HOC problems: Since we explicitly pass props, we solve the HOC's implicit props issue.
+
+Unnecessary with Hooks: Hooks changed the way we can add reusability and data sharing to components, which can replace the render props pattern in many cases.
+
+10. **React -> Hooks Pattern**
+
+---
