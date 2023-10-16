@@ -111,3 +111,21 @@ Reusability: We can easily reuse the presentational components throughout our ap
 Flexibility: Since presentational components don't alter the app logic, the appearance of presentational components can easily be altered by someone without knowledge of the codebase.
 
 Testing: Testing presentational components is easy, as they are usually pure functions. We know that the components will render based on which data we pass, without having to mock a data store.
+
+8. **React -> High Order Component Pattern**
+
+---
+
+Pass reusable logic down as props to components throughout the app.
+
+HOC make it easy to pass logic to components by wrapping them.
+
+**Tradeoffs**
+
+Separations of concerns: Using HOC pattern allows us keep logic that we want to reuse all in one place.
+
+Naming collisions: It can easily happen that the HOC overrides a prop of a component. Make sure that the HOC can handle accidental name collision, by either renaming the prop or merging it.
+
+9. **React -> Render Props Pattern**
+
+---
