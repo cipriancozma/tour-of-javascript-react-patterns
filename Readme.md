@@ -185,3 +185,9 @@ Compound Pattern is used to create multiple components that work together to per
 State management: Compound components manage their own internal state, which they share among the several child components
 
 Single import: When importing a compound component, we don't have to explicitly import the child components that are available on that component.
+
+#### Performance Patterns
+
+13. **Bundling & Compiling**
+
+---
