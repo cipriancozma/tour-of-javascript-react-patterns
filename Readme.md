@@ -177,3 +177,11 @@ Performance: Components that consume the Provider context re-render whenever a v
 12. **React -> Compound Pattern**
 
 ---
+
+Compound Pattern is used to create multiple components that work together to perform a single task.
+
+**Tradeoffs**
+
+State management: Compound components manage their own internal state, which they share among the several child components
+
+Single import: When importing a compound component, we don't have to explicitly import the child components that are available on that component.
