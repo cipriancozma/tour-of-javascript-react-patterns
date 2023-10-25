@@ -229,7 +229,7 @@ A larger bundle can lead to an increased amount of loading time, processing time
 
 To avoid larger bundles we can tell the bundler to create multiple, smaller bundles instead of bundling everything into one big file.
 
-##### Tree Shaking
+##### Three Shaking
 
 With Three Shaking we can reduce the size by eliminatig the dead code. Three Shaking is aimed at removing unused code from JS bundle.
 
@@ -238,3 +238,95 @@ For example, if two methods are exported from a file, namely validateInput and f
 14. **Static Import**
 
 ---
+
+Import code that has been exported by another module.
+
+A statically imported module is a module that's imported with the default import keyword.
+
+**Tradeoffs**
+
+Loading instant dependencies: Statically imported components are instantly available to the user.
+
+Optimizations: Statically imported modules can be statically analyzed and tree-shaken.
+
+Large bundle size: When importing all modules, you might include code that won't be necessary.
+
+15. **Dynamic Import**
+
+---
+
+Imports part of your code on demand.
+
+In React, we can dynamically load a component by using React.Suspense with React.lazy.
+
+**Tradeoffs**
+
+Faster initial load: Dynamically importing modules reduces the initial bundle size - allowing for a smaller initial load since the client doens't have to download and execute as much, saving bandwith.
+
+User Experience: If you're lazy loading a component that's needed for the initial render, it may unnecessary result in longer loading times. Try to only lazy load components that aren't visible on the initial render.
+
+16. **Import on Visibility**
+
+---
+
+Load non critical components when they are visible in the viewport.
+
+We can also dynamically import components based on their visibility within the viewport.
+
+One way to dynamically import components on interaction is by using the Intersection Observer API. There is a React hook called react-intersection-observer that we can use to easily detect whether a component is visible in the viewport.
+
+17. **Route Based Splitting**
+
+---
+
+Dynamically load components based on the current route.
+
+If your application has multiple pages, we can use dynamic imports to only load the resources that are needed for the current route.
+
+Instead of the code for all the possible pages in the initial bundle, we can bundle split based on routes.
+
+If you're using react-router for navigation, you can wrap the Switch component in a React.Suspense and import the routes using React.lazy. This automatically enables route-based code splitting.
+
+18. **Browser Hints**
+
+---
+
+Use hints to inform the browser about critical resources.
+
+**Prefetch** is used to fetch and cache the resources that may be requested some time soon.
+
+We can prefetch a resource by explicitly adding it to the head of the html document.
+
+`<link rel="prefetch" href="./about.bundle.js" />`
+
+If you're using Webpack, you can prefer to prefetch id dynamically by using /_ webpackPrefetch: true _/
+
+`const About = lazy(() => import(/* webpackPrefetch: true */ "./about"));`
+
+**Tradeoffs**
+
+Loading time: The browser can quickly load and render the component from cache, instead of having to make a request to the server.
+
+Unnecessary: If the user never ended up in navigating to that route, we unnecessary loaded the resource, which could affect the app's performance.
+
+**Preload** is used the inform the browser of critical resources before they are discovered.
+
+The preload browser hint can be used to fetch resources that are critical to the current navigation, such as fonts and images.
+
+We can preload a resource by adding it to the head of the html.
+
+`<link rel="preload" href="./search-flyout.bundle.js" />`
+
+If you're using Webpack you can preload it using /_ webpackPreload: true _/.
+
+`const SearchFlyout = lazy(() =>
+  import(/* webpackPreload: true */ "./SearchFlyout")
+);`
+
+**Tradeoffs**
+
+Loading Time: The browser can quickly load and render the component from cache, instead of having to make a request to the server.
+
+Layout Shift: Preloading styles, fonts and images can reduce layout shift.
+
+#### Rendering Patterns
