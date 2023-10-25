@@ -191,3 +191,50 @@ Single import: When importing a compound component, we don't have to explicitly 
 13. **Bundling & Compiling**
 
 ---
+
+Performance Patterns can be used to achieve a better user and developer experience.
+
+##### Bundlers
+
+A bundler bundles the application together in one or multiple files and makes it possible to make code executable in other environments. A bundler receives an entry file from which it starts to bundle the code together.
+
+Popular bundlers: Webpack, Parcel, Rollup
+
+##### Compilers
+
+A compiler converts JavaScript or TypeScript code into another version of JavaScript, which could be backwards compatible in current and older browsers or environments.
+
+For example, we can use Private class features in JS, but not all browsers support it yet. If we use Private class features in our code, we need to use a compiler to compile it to a version of JS that a browser can execute.
+
+Popular compilers: Babel, TypeScript
+
+##### Minifiers
+
+A minifier can reduce the size of a JS file based on a certain configuration, for example by removing comments, making variable and function names smaller, removing whitespace and so on.
+This allows to have a much smaller bundle size and faster execution without sacrificing readability, while JS executes and behaves the same way.
+
+Popular minifiers: Terser, Uglify
+
+##### Combination
+
+When working with bundlers, for example Webpack, we have to configure Webpack to include a compiler like Babel and add optimizations like the Terser minifier.
+
+There are also tools that combine all these steps, such as: SWC or ESBuild -> both compiler, bundler and minifier.
+
+##### Bundle Splitting
+
+Bundle splitting is the process of creating multiple, smaller bundles rather than one large bundle.
+
+A larger bundle can lead to an increased amount of loading time, processing time and execution time. Users on low end devices or slower networks will see an significant increase in loading time before the bundle has been fetched.
+
+To avoid larger bundles we can tell the bundler to create multiple, smaller bundles instead of bundling everything into one big file.
+
+##### Tree Shaking
+
+With Three Shaking we can reduce the size by eliminatig the dead code. Three Shaking is aimed at removing unused code from JS bundle.
+
+For example, if two methods are exported from a file, namely validateInput and formatInput, but we are importing only validateInput, the bundler will ensure that the formatInput method won't be included in the final bundle.
+
+14. **Static Import**
+
+---
