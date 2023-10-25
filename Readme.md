@@ -330,3 +330,11 @@ Loading Time: The browser can quickly load and render the component from cache, 
 Layout Shift: Preloading styles, fonts and images can reduce layout shift.
 
 #### Rendering Patterns
+
+Rendering content on the web can be done in many ways. The decision how and where to fetch and render content is key to the performance of an app.
+
+**Web Vitals** is to measure how well our website performs, we can use a set of useful measurements called Web Vitals.
+
+19. **Client-Side Rendering**
+
+---
