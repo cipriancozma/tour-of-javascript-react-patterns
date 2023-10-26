@@ -338,3 +338,55 @@ Rendering content on the web can be done in many ways. The decision how and wher
 19. **Client-Side Rendering**
 
 ---
+
+The contents of a client-side rendered application get rendered in the browser.
+
+20. **Static Rendering**
+
+---
+
+Deliver pre-rendered HTML content that was generated when the site was built.
+
+**Tradeoffs**
+
+Cacheability: Pre-rendered HTML files can be cached and served by a global CDN. Users can benefit from quick responses when they request a page, as the request doesn't have to go all the way to the origin server.
+
+SEO: The HTML content can be rendered by web crawlers with not extra effort.
+
+Availability: Static is always online. Even if your backend or data source goes down, your existing pre-rendered page will still be available.
+
+Backend Load: With Static generation, the db or API wouldn't need to be hit on every request. Page rendering code wouldn't have to run on every request.
+
+**Dynamic Data**
+
+We can fetch data server-side at build time and generate the HTML based on the fetched data. When you're working with frameworks, they usually offer methods to easily add dynamic data to static pages.
+
+If you are using Next.js, you can do this with the getStaticProps method.
+
+**Fetch Dynamic Data Client-Side**
+
+One approach to add dynamic data to a statically rendered page is to use a client-side fetch.
+
+We can use SWR to fetch the data client-side and show a skeleton component while the data is being fetched.
+
+21. **Incremental Static Regeneration**
+
+---
+
+Incremental Static Generation allows us to only pre-render a subset of pages, for example pages that are likely to be requested by the user and render the rest on demand.
+
+When the user requests a page that hasn't been pre-rendered yet, the page gets server-rendered, after which it can be cached by a CDN.
+
+We can implement this using Next.js getStaticProps method in combination with the getStaticPaths method.
+
+22. **Server Side Rendering**
+
+---
+
+With SSR we can generate HTML on the server (or serverless function) on every request.
+
+When using Next.js we can server-render a page by using the getServerSideProps method.
+
+Really nice is also the concept of **Streaming Server-Side Rendering** which generates HTML on every request, sending it down piece by piece.
+
+Streaming Server-Side rendering allows us to send components down to the client as soon as they've been generated.
